@@ -1,0 +1,150 @@
+ $dark: hsl(238, 29%, 16%);
+ $arrow:hsl(14, 88%, 65%);
+ $font:'Kumbh Sans',
+ sans-serif;
+ $dark-font:hsl(237, 12%, 33%);
+ $light-font:hsl(240, 6%, 50%);
+
+
+ * {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+ }
+
+ body {
+     margin: 0;
+     background: fixed no-repeat;
+     background-image: linear-gradient(to bottom, #ae67e9, #9e66e9, #8c66e8, #7965e7, #6464e6);
+     font-size: 12px;
+ }
+
+ .container {
+     margin: auto;
+     margin-top: 230px;
+     width: 80%;
+     height: 470px;
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-end;
+     align-items: center;
+     background-color: rgb(255, 255, 255);
+     border-radius: 20px;
+     font-family: $font;
+     padding: 20px;
+         
+        .woman{
+            position: absolute;
+            bottom: 80%;
+            .woman-img{
+                width: 240px;
+            }
+        }
+
+ }
+
+ .acordeon {
+     width: 100%;
+     max-width: 120em;
+     .first{
+         padding-top: 30px;
+     }
+ }
+
+ .bloque {
+     margin: 0 0 1em;
+     padding: 2px;
+ }
+ .subtitle {
+     color: $light-font;
+     font-size: .7rem;
+     padding-bottom: 15px;
+     font-weight: 700;
+     
+     background: no-repeat url(/assets/icon-arrow-down.svg);
+     background-position: right bottom 70% ;
+ }
+
+ .contenido {
+     
+     height: 0;
+     padding: 0em;
+     overflow: hidden;
+     transition: all .5s ease;
+    font-family: $font;
+    font-weight: 400;
+    color: $light-font;
+    border-bottom: 1px solid  rgba(128, 128, 128, 0.233);
+
+ }
+
+ .acordeon .bloque.activo .contenido {
+     height: 4.2em;
+     
+ }
+ .acordeon .bloque.activo .subtitle{
+    color: $dark-font;
+}
+@media  (max-width:1024px){
+    .container{
+        max-width: 400px;
+        min-width: 275px;
+    }
+}
+@media  (min-width:1024px){
+    .container{
+        width: 920px;
+        height: 500px;
+        padding-right: 50px;
+        align-items: flex-end;
+        justify-content: center;
+        vertical-align: middle;
+        .woman{
+            align-self: flex-start;
+            
+            background: #333;
+            width: 40%;
+            position: relative;
+            bottom: 30%;
+            .woman-img{
+                width: 500px;
+                position: absolute;
+                left: -200px;
+                top: 100px;
+            }
+        }
+        .title-container{
+            position: absolute;
+            top: 10%;
+            right: 42%;
+            font-size: 1rem;
+            color: $dark;
+            font-weight: 700;
+        }
+    }
+
+ .acordeon{
+    width: 48%;
+    .bloque{
+        padding-right: 60px;
+    }
+    .subtitle{
+        font-size: .9rem;
+        font-weight: 700;
+        color: $light-font;
+        
+        &:hover{
+            cursor: pointer;
+            color: rgb(255, 51, 0);
+        }
+    }
+    .contenido{
+        font-size: .8rem;
+    }
+ }
+
+ .acordeon .bloque.activo .subtitle{
+    color: $dark;
+}
+}
